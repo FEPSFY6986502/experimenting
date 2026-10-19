@@ -24,23 +24,10 @@
             }
         }
     </script>
-    <!-- REMOVE THIS ENTIRE SECTION -->
-<section id="findings" class="scroll-mt-24 bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-    <h2 class="text-xl font-bold mb-4 flex items-center space-x-2 text-slate-900 dark:text-white">
-        <span class="text-brand-600">3.</span>
-        <span>Findings & Data</span>
-    </h2>
-    <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Error rates measured prior to and following the application of variance normalization techniques:</p>
-    <div class="h-64 sm:h-80 relative w-full">
-        <canvas id="chartCanvas"></canvas>
+
     </div>
 </section>
     
-    <!-- Chart.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <!-- FontAwesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         .fluid-title {
@@ -231,13 +218,6 @@
             });
         });
     </script>
-    // REMOVE THIS PART
-const ctx = document.getElementById('chartCanvas').getContext('2d');
-new Chart(ctx, {
-    // ... chart configuration ...
 });
-
-    <head><!-- REMOVE THIS FROM THE <HEAD> -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script></head>
 </body>
 </html>
