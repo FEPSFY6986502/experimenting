@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Research Report - Foundation Year</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .fluid-title {
+            font-size: clamp(1.5rem, 3vw + 1rem, 2.75rem);
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; color: black !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-200">
+
+    <!-- TOP READING PROGRESS BAR -->
+    <div class="fixed top-0 left-0 w-full h-1.5 bg-slate-200 dark:bg-slate-800 z-50 no-print">
+        <div id="reading-bar" class="h-full bg-brand-500 w-0 transition-all duration-75"></div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-800/90 backdrop-blur border-b border-slate-200 dark:border-slate-700 no-print">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-graduation-cap text-brand-600 text-2xl"></i>
+                <span class="font-bold text-lg hidden sm:inline">Academic Portfolio</span>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="p-2.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700">
+                    <i id="theme-icon" class="fa-solid fa-moon"></i>
+                </button>
+                <!-- Print Button -->
+                <button onclick="window.print()" class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white rounded-lg text-sm font-medium flex items-center space-x-2">
+                    <i class="fa-solid fa-print"></i>
+                    <span class="hidden sm:inline">Print / PDF</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT WRAPPER -->
+    <main class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- SIDEBAR NAVIGATION (Table of Contents) -->
+        <aside class="lg:col-span-3 no-print">
+            <div class="sticky top-24 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                <h3 class="font-bold text-slate-900 dark:text-white mb-3 text-sm uppercase tracking-wider">Contents</h3>
+                <nav class="space-y-1 text-sm" id="toc">
+                    <a href="#abstract" class="toc-link block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700">1. Abstract</a>
+                    <a href="#methodology" class="toc-link block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700">2. Methodology</a>
+                    <a href="#findings" class="toc-link block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700">3. Findings & Data</a>
+                    <a href="#progress" class="toc-link block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700">4. Research Progress</a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- REPORT MAIN BODY -->
+        <article class="lg:col-span-9 space-y-10">
+            
+            <!-- HEADER -->
+            <section class="bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                <span class="text-xs font-semibold uppercase tracking-widest text-brand-600 dark:text-brand-500">Foundation Year Research Project</span>
+                <h1 class="fluid-title font-extrabold text-slate-900 dark:text-white mt-2 mb-4">Evaluating Algorithmic Bias in Machine Learning Systems</h1>
+                <div class="flex flex-wrap items-center gap-4 text-xs text-slate-500 dark:text-slate-400 border-t border-slate-100 dark:border-slate-700 pt-4">
+                    <span><i class="fa-regular fa-user mr-1"></i> Student ID: 2026-FY-091</span>
+                    <span><i class="fa-regular fa-calendar mr-1"></i> October 2026</span>
+                    <span><i class="fa-solid fa-check-circle text-emerald-500 mr-1"></i> Status: Submitted</span>
+                </div>
+            </section>
+
+            <!-- SECTION 1: ABSTRACT -->
+            <section id="abstract" class="scroll-mt-24 bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                <h2 class="text-xl font-bold mb-4 flex items-center space-x-2 text-slate-900 dark:text-white">
+                    <span class="text-brand-600">1.</span>
+                    <span>Abstract</span>
+                </h2>
+                <p class="leading-relaxed text-slate-600 dark:text-slate-300">
+                    This research paper explores automated decision-making models across dataset classifications. By benchmarking false-positive disparities across demographics, we isolate structural variance within training models to improve output transparency.
+                </p>
+            </section>
+
+            <!-- SECTION 2: METHODOLOGY -->
+            <section id="methodology" class="scroll-mt-24 bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                <h2 class="text-xl font-bold mb-4 flex items-center space-x-2 text-slate-900 dark:text-white">
+                    <span class="text-brand-600">2.</span>
+                    <span>Methodology</span>
+                </h2>
+                <p class="leading-relaxed text-slate-600 dark:text-slate-300 mb-4">
+                    Data sampling was performed across 10,000 algorithmic decision instances. Evaluation metrics prioritized equalized odds and precision parity across independent testing folds.
+                </p>
+            </section>
+
+            <!-- SECTION 3: FINDINGS & CHART -->
+            <section id="findings" class="scroll-mt-24 bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                <h2 class="text-xl font-bold mb-4 flex items-center space-x-2 text-slate-900 dark:text-white">
+                    <span class="text-brand-600">3.</span>
+                    <span>Findings & Data</span>
+                </h2>
+                <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Error rates measured prior to and following the application of variance normalization techniques:</p>
+                <div class="h-64 sm:h-80 relative w-full">
+                    <canvas id="chartCanvas"></canvas>
+                </div>
+            </section>
+
+            <!-- SECTION 4: PROGRESS BARS -->
+            <section id="progress" class="scroll-mt-24 bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                <h2 class="text-xl font-bold mb-6 flex items-center space-x-2 text-slate-900 dark:text-white">
+                    <span class="text-brand-600">4.</span>
+                    <span>Research Progress & Status</span>
+                </h2>
+                
+                <div class="space-y-5">
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold mb-1">
+                            <span>Literature Review</span>
+                            <span>100%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+                            <div class="bg-emerald-500 h-full rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold mb-1">
+                            <span>Data Analysis & Model Training</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+                            <div class="bg-brand-500 h-full rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold mb-1">
+                            <span>Final Conclusion & Review</span>
+                            <span>40%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+                            <div class="bg-amber-500 h-full rounded-full" style="width: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </article>
+    </main>
+
+    <!-- JAVASCRIPT IMPLEMENTATION -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Theme Toggle
+            const toggleBtn = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            
+            toggleBtn.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                const isDark = document.documentElement.classList.contains('dark');
+                themeIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+            });
+
+            // 2. Reading Progress Bar
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                document.getElementById('reading-bar').style.width = scrollPercent + '%';
+            });
+
+            // 3. Chart.js Initialization
+            const ctx = document.getElementById('chartCanvas').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Baseline Model', 'Normalized Model'],
+                    datasets: [{
+                        label: 'False Positive Disparity (%)',
+                        data: [34.2, 8.1],
+                        backgroundColor: ['#ef4444', '#0284c7']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
